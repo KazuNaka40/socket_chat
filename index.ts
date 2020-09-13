@@ -7,7 +7,7 @@ $(function () {
   const socket = io.connect(url);
   $("#myForm").submit(function (e) {
     e.preventDefault();
-    socket.json.emit("emit_from_client", {
+    socket.emit("emit_from_client", {
       msg: $("#msg").val(),
       name: $("#name").val(),
     });
